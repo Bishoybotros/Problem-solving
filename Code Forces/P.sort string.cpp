@@ -1,26 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-const int MAX_CHAR = 26;
-    int main()
-    {
-        string s;
-        int x;
-        cin>>x>>s;
-        int charCount[MAX_CHAR] = {0};
-
-
-        for (int i=0; i<s.length(); i++)
-
-            charCount[s[i]-'a']++;
-
-        for (int i=0;i<MAX_CHAR;i++)
-        {
-            for (int j = 0; j < charCount[i]; j++)
-            { cout << (char) ('a' + i);
-        }
-    }
-        return 0;
-    }
-
-
+int main ()
+{
+	int arr[26] = {0};  
+	int size;
+	cin>>size;
+	for(int i=0;i<size;i++){ 
+	    char c;
+	    cin>>c;
+		arr[(int)c - 97]++;
+	}
+	for(int i= 0;i<=25;i++){ 
+		while(arr[i] != 0){
+			cout<<(char)(i+97);
+			arr[i]--;
+		}
+	}
+    return 0;
+}
